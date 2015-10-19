@@ -22,6 +22,9 @@ Plugin 'bling/vim-airline'
 " Fuzzy files search
 Plugin 'kien/ctrlp.vim'
 
+" Syntax checker
+Plugin 'scrooloose/syntastic'
+
 " Git
 Plugin 'tpope/vim-fugitive'
 
