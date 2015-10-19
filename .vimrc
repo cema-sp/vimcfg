@@ -10,6 +10,12 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
+" Nerd Tree
+Plugin 'scrooloose/nerdtree'
+
+" Autocomplete
+Plugin 'Valloric/YouCompleteMe'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -58,4 +64,10 @@ nnoremap $ <nop>
 nnoremap ^ <nop>
 " highlight last inserted text
 nnoremap gV `[v`]
+
+" Plugins configuration
+"
+" NERDTree
+" Autostart
+autocmd vimenter * NERDTree
 

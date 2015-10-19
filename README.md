@@ -12,9 +12,15 @@ ln -s ~/vimcfg/.vimrc ~/.vimrc
 ln -s ~/vimcfg/.vimrc ~/.nvimrc
 ~~~
 
-# Reload config inside Vim:
+# Reload config inside Vim
 
 ~~~bash
 :source ~/.vimrc
 ~~~
 
+# Install YouCompleteMe
+
+~~~bash
+cd ~/.vim/bundle/YouCompleteMe
+./install.py --clang-completer --gocode-completer
+~~~
