@@ -16,6 +16,9 @@ Plugin 'scrooloose/nerdtree'
 " Autocomplete
 Plugin 'Valloric/YouCompleteMe'
 
+" Status bar
+Plugin 'bling/vim-airline'
+
 " Git
 Plugin 'tpope/vim-fugitive'
 
