@@ -16,6 +16,16 @@ Plugin 'scrooloose/nerdtree'
 " Autocomplete
 Plugin 'Valloric/YouCompleteMe'
 
+" Git
+Plugin 'tpope/vim-fugitive'
+
+" Clojure
+" See: http://blog.venanti.us/clojure-vim/
+Plugin 'guns/vim-clojure-static' " Runtime files
+Plugin 'tpope/vim-fireplace' " REPL
+Plugin 'kien/rainbow_parentheses.vim' " Awesome parantheses
+Plugin 'guns/vim-clojure-highlight' " Awesome highlighting
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
