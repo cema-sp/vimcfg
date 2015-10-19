@@ -19,6 +19,9 @@ Plugin 'Valloric/YouCompleteMe'
 " Status bar
 Plugin 'bling/vim-airline'
 
+" Fuzzy files search
+Plugin 'kien/ctrlp.vim'
+
 " Git
 Plugin 'tpope/vim-fugitive'
 
