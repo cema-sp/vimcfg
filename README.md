@@ -12,6 +12,12 @@ ln -s ~/vimcfg/.vimrc ~/.vimrc
 ln -s ~/vimcfg/.vimrc ~/.nvimrc
 ~~~
 
+# Install Vundle
+
+~~~bash
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+~~~
+
 # Reload config inside Vim
 
 ~~~bash
