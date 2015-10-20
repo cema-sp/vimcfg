@@ -28,6 +28,14 @@ Plugin 'scrooloose/syntastic'
 " Git
 Plugin 'tpope/vim-fugitive'
 
+" Multiple cursors
+Plugin 'terryma/vim-multiple-cursors'
+
+" Markdown
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'JamshedVesuna/vim-markdown-preview'
+
 " Clojure
 " See: http://blog.venanti.us/clojure-vim/
 Plugin 'guns/vim-clojure-static' " Runtime files
@@ -61,6 +69,12 @@ set showmatch           " highlight matching [{()}]
 " Searching
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
+" Folding
+set foldenable          " enable folding
+set foldlevelstart=10   " open most folds by default
+set foldnestmax=10      " 10 nested fold max
+" space open/closes folds
+" nnoremap <space> za
 " Movement
 "   Learn Keys
 imap <up> <NOP>
@@ -84,9 +98,23 @@ nnoremap ^ <nop>
 " highlight last inserted text
 nnoremap gV `[v`]
 
+set keymap=russian-jcukenwin
+set iminsert=0
+set imsearch=0
+highlight lCursor guifg=NONE guibg=Cyan
+
+setlocal spell spelllang=ru_yo,en_us
+
 " Plugins configuration
 "
 " NERDTree
 " Autostart
 autocmd vimenter * NERDTree
+
+" Markdown Preview
+let g:vim_markdown_preview_browser='Google Chrome'
+let g:vim_markdown_preview_temp_file=1
+let g:vim_markdown_preview_toggle=2
+let g:vim_markdown_preview_github=1
+let g:vim_markdown_preview_hotkey='<C-m>'
 
