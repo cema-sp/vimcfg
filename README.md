@@ -7,9 +7,8 @@ My Vim config
 ~~~bash
 git clone https://github.com/cema-sp/vimcfg.git ~/vimcfg
 ln -s ~/vimcfg/.vim ~/.vim
-ln -s ~/vimcfg/.vim ~/.nvim
-ln -s ~/vimcfg/.vimrc ~/.vimrc
-ln -s ~/vimcfg/.vimrc ~/.nvimrc
+ln -s ~/vimcfg/.vim ~/.config/nvim
+ln -s ~/vimcfg/.vimrc ~/vimcfg/.vim/init.vim
 ~~~
 
 # Install Vundle
