@@ -56,14 +56,16 @@ syntax enable
 set background=dark
 colorscheme solarized
 " Tabs & Spaces
-set tabstop=4
-set softtabstop=4
-" set expandtab       " tabs are spaces
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set expandtab       " tabs are spaces
 " UI
 set number
 set showcmd
 set cursorline          " highlight current line
 filetype indent on      " load filetype-specific indent files
+filetype plugin indent on      " load filetype-specific indent files
 set wildmenu            " visual autocomplete for command menu
 set showmatch           " highlight matching [{()}]
 " Searching
