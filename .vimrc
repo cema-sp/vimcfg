@@ -115,11 +115,12 @@ setlocal spell spelllang=ru_yo,en_us
 " NERDTree
 " Autostart
 autocmd vimenter * NERDTree
+map <F12> :NERDTreeToggle<CR>
 
 " Markdown Preview
-let g:vim_markdown_preview_browser='Google Chrome'
-let g:vim_markdown_preview_temp_file=1
-let g:vim_markdown_preview_toggle=2
-let g:vim_markdown_preview_github=1
-let g:vim_markdown_preview_hotkey='<C-m>'
+let vim_markdown_preview_browser='Google Chrome'
+let vim_markdown_preview_temp_file=1
+let vim_markdown_preview_toggle=2
+let vim_markdown_preview_github=1
+let vim_markdown_preview_hotkey='<C-m>'
 
