@@ -31,6 +31,9 @@ Plugin 'tpope/vim-fugitive'
 " Multiple cursors
 Plugin 'terryma/vim-multiple-cursors'
 
+" Surround
+Plugin 'tpope/vim-surround'
+
 " Markdown
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
