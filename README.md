@@ -38,5 +38,7 @@ See https://github.com/JamshedVesuna/vim-markdown-preview#requirements
 
 ## Install plugins in vim
 
+~~~
 :VundleInstall
+~~~
 

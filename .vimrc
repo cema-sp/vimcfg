@@ -125,8 +125,8 @@ setlocal spell spelllang=ru_yo,en_us
 " Plugins configuration
 "
 " NERDTree
-" Autostart
-autocmd vimenter * NERDTree
+" Autostart NERDTree
+" autocmd vimenter * NERDTree
 map <F12> :NERDTreeToggle<CR>
 
 " Markdown Preview
