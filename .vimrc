@@ -16,6 +16,12 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
+" Solarized colorscheme
+" Plugin 'altercation/vim-colors-solarized'
+
+" Monokai colorscheme
+Plugin 'crusoexia/vim-monokai'
+
 " Nerd Tree
 Plugin 'scrooloose/nerdtree'
 
