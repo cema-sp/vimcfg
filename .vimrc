@@ -26,7 +26,7 @@ Plugin 'crusoexia/vim-monokai'
 Plugin 'scrooloose/nerdtree'
 
 " Autocomplete
-Plugin 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --gocode-completer' }
 
 " Status bar
 Plugin 'bling/vim-airline'
