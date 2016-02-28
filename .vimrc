@@ -69,7 +69,7 @@ filetype plugin indent on    " required
 " Colors
 syntax enable
 set background=dark
-colorscheme solarized
+colorscheme monokai
 " Tabs & Spaces
 set tabstop=2
 set softtabstop=2
@@ -135,4 +135,3 @@ let vim_markdown_preview_temp_file=1
 let vim_markdown_preview_toggle=2
 let vim_markdown_preview_github=1
 let vim_markdown_preview_hotkey='<C-m>'
-
