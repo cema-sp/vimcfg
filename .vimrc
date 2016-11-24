@@ -10,10 +10,10 @@ set rtp+=~/.vim/bundle/Vundle.vim
 " set shell=/bin/bash
 
 " Clipboard
-set clipboard=unnamed,autoselect
+set clipboard=unnamedplus
+" To copy with cmd+c in vim:
+" set clipboard=unnamed,autoselect
 set pastetoggle=<F2>
-" To paste from clipboard with p key:
-" set clipboard=unnamedplus,autoselect
 
 call vundle#begin()
 " alternatively, pass a path where Vundle should install plugins
@@ -32,7 +32,7 @@ Plugin 'crusoexia/vim-monokai'
 Plugin 'scrooloose/nerdtree'
 
 " Autocomplete & completion
-Plugin 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --gocode-completer' }
+Plugin 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --gocode-completer --tern-completer' }
 Plugin 'ervandew/supertab'
 
 " Snippets
@@ -44,6 +44,7 @@ Plugin 'bling/vim-airline'
 
 " Fuzzy files search
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'mileszs/ack.vim'
 
 " Comments
 Plugin 'scrooloose/nerdcommenter'
@@ -70,8 +71,14 @@ Plugin 'JamshedVesuna/vim-markdown-preview'
 " Execution
 Plugin 'Shougo/vimproc.vim', { 'do': 'make' }
 
+" Whitespaces
+Plugin 'ntpeters/vim-better-whitespace'
+
 " Aligning
 Plugin 'godlygeek/tabular'
+
+" JavaScript
+Plugin 'ternjs/tern_for_vim', { 'do': 'npm install' }
 
 " Haskell
 Plugin 'eagletmt/ghcmod-vim'
@@ -83,6 +90,12 @@ Plugin 'guns/vim-clojure-static' " Runtime files
 Plugin 'tpope/vim-fireplace' " REPL
 Plugin 'kien/rainbow_parentheses.vim' " Awesome parantheses
 Plugin 'guns/vim-clojure-highlight' " Awesome highlighting
+
+" Solidity
+Plugin 'tomlion/vim-solidity'
+
+" Elm
+Plugin 'lambdatoast/elm.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -137,13 +150,17 @@ map <right> <NOP>
 nnoremap j gj
 nnoremap k gk
 " move to beginning/end of line
-" nnoremap B ^
-" nnoremap E $
+nnoremap BB ^
+nnoremap EE $
 " $/^ doesn't do anything
-nnoremap $ <nop>
-nnoremap ^ <nop>
+" nnoremap $ <nop>
+" nnoremap ^ <nop>
 " highlight last inserted text
 nnoremap gV `[v`]
+" remove highlight with Leader + CR
+nmap <Leader><CR> :nohlsearch<CR>
+" ESCape insert mode with jj
+inoremap jj <ESC>
 
 set keymap=russian-jcukenwin
 set iminsert=0
@@ -153,7 +170,7 @@ highlight lCursor guifg=NONE guibg=Cyan
 setlocal spell spelllang=ru_yo,en_us
 
 " Enable mouse
-set mouse=a
+" set mouse=a
 
 " Nice autocomplete menus
 set completeopt=menuone,menu,longest
@@ -188,8 +205,8 @@ let g:SuperTabDefaultCompletionType = '<C-n>'
 let g:UltiSnipsSnippetsDir='~/.vim/snippets'
 let g:UltiSnipsEditSplit='vertical'
 let g:UltiSnipsExpandTrigger = "<c-space>"
-let g:UltiSnipsJumpForwardTrigger = "<tab>"
-let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+let g:UltiSnipsJumpForwardTrigger = "<c-j>"
+let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
 
 nnoremap <leader>ue :UltiSnipsEdit<cr>
 
@@ -209,13 +226,24 @@ let g:haskellmode_completion_ghc = 0
 autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 let g:ycm_semantic_triggers = {'haskell' : ['.']}
 
+" Ack & Ag search
+if executable('ag')
+  let g:ackprg = 'ag --nogroup --nocolor --column'
+endif
+
+" Whitespaces
+" autocmd BufWritePre * if index(['md'], &ft) < 0 | StripWhitespace
+" autocmd FileType javascript,html,ruby autocmd BufWritePre <buffer> StripWhitespace
+autocmd BufWritePre *.rb,*.js,*.jsx,*.html,*.css,*.sass StripWhitespace
+let g:better_whitespace_filetypes_blacklist=['diff', 'gitcommit', 'unite', 'qf', 'help','markdown']
+
 " Tabular
 let g:haskell_tabular = 1
 
 " Markdown Preview
 let vim_markdown_preview_browser='Google Chrome'
 let vim_markdown_preview_temp_file=1
-let vim_markdown_preview_toggle=2
+let vim_markdown_preview_toggle=1
 let vim_markdown_preview_github=1
 let vim_markdown_preview_hotkey='<C-m>'
 
